@@ -3,7 +3,7 @@
 
 import random # python no tiene un metodo como random() en otros lenguajes, es necesario importar esta libreria que viene por defecto: uso linea 70
 def suma(): # manera de declarar una funcion, NOTA: en python es muy importante la identacion
-    numero1 = 10; #python no es un lenguaje de fuerte tipado, por lo tanto las variables y su tipo se identifican una vez se asigna un valor 
+    numero1 = 10; #python no es un lenguaje de tipado requerido, por lo tanto las variables y su tipo se identifican una vez se asigna un valor 
     numero2 = 2;
     respuesta = 0;
 
