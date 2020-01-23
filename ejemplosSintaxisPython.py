@@ -109,6 +109,35 @@ def caracteristicasTipoString():
     #   - cadena.split(","): al igual que otros lenguajes regresa un arreglo sin el caracter especificado en el metodo
 
 
+def evaluarSentencias():
+    print(9>21); # nos imprime un boleano si la sentencia de adentro se cumple
+    print(4==4);
+
+    #uso de condicional if
+    a = 10;
+    b = 11;
+
+    if a < b:
+        print("a es menor que b");
+    else:
+        print("a NO es menor que b");
+
+    #funcion predefinida de python la cual nos arroja un booleano si se cumple un sentencia con relacion a los tipos de dato de un objeto
+    variable = 120;
+    print(isinstance(variable,int));
+
+def usarOperadores():
+    #en esta funcion solo se mostraran operadores no tan basicos
+
+    numero1 = 3;
+    numero2 = 2;
+
+    #aritmeticos:
+    print(numero1%numero2); #modulo, practicamente es el residuo de una división
+    print(numero1**numero2); #exponencial, 10 * 10 * 10
+    print(numero1 // numero2); #division piso, arroja el resultado de una division rededondeando el resultado menor o igual a .5 entonces se queda con el entero y mayor a .5 nos regresa el entero siguiente
+
+
 
 #invocacion de funciones
 suma(); #mando llamar una funcion
@@ -118,4 +147,6 @@ conversiones();
 numeroRandom();
 variablesGlobales();
 print("python es: "+variableGlobal); #lo invoco aqui para que se modifique la variable con el metodo de arriba, puedes mover esta linea arriba de la funcion variablesGlobales para ver la diferencia
-caracteristicasTipoString();    
+caracteristicasTipoString();
+evaluarSentencias();
+usarOperadores();    
