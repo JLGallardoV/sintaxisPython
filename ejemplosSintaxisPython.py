@@ -109,13 +109,92 @@ def caracteristicasTipoString():
     #   - cadena.split(","): al igual que otros lenguajes regresa un arreglo sin el caracter especificado en el metodo
 
 
+def evaluarSentencias():
+    print("9 es mayor que 21?");
+    print(9>21); # nos imprime un boleano si la sentencia de adentro se cumple
+    print("4 es igual que 4?")
+    print(4==4);
+
+    #uso de condicional if
+    a = 10;
+    b = 11;
+
+    if a < b:
+        print("a es menor que b");
+    else:
+        print("a NO es menor que b");
+
+    #funcion predefinida de python la cual nos arroja un booleano si se cumple un sentencia con relacion a los tipos de dato de un objeto
+    variable = 120;
+    print(isinstance(variable,int));
+
+def usarOperadores():
+    #en esta funcion solo se mostraran operadores no tan basicos
+
+    numero1 = 3;
+    numero2 = 2;
+
+    #aritmeticos: para operaciones aritmeticas
+    print("modulo");
+    print(numero1%numero2); #modulo, practicamente es el residuo de una división
+    print("exponencial");
+    print(numero1**numero2); #exponencial, 10 * 10 * 10
+    print("division piso");
+    print(numero1 // numero2); #division piso, arroja el resultado de una division rededondeando el resultado menor o igual a .5 entonces se queda con el entero y mayor a .5 nos regresa el entero siguiente
+
+    #asignacion: aqui como en otros lenguajes no se permite el i++ o i-- se expresan ya sea de su manera ordinaria o de la sieguiente manera 
+    numero1 += 2 #es lo mismo que numero1 = numero1 + numero2
+    numero1 **= 1 #es lo mismo que numero1 = numero1 ** numero2
+    numero1 //= 3 #es lo mismo que numero1 = numero1 // numero2
+    print("uso de += "+str(numero1)); 
+    print("uso de **= "+str(numero1)); 
+    print("uso de //= "+str(numero1)); 
+
+    #comparacion
+    print(9>21); #como ya sabes nos regresan una expresion booleana, existen mas, para un ejemplo practico solo pongo esos (<=, ==, !=)    
+    print(9<21);    
+    print(9>=21);
+
+    #logicos: usados para condicionar una expresion
+    print("condicional AND: ");    
+    print(numero1 > numero2 and numero2 < numero1); #tambien regresan una expresion booleana
+    print("condicional OR: ");    
+    print(numero1 > numero2 or numero2 < numero1); #tambien regresan una expresion booleana
+    print("condicional NEGACION: ");    
+    print(not(numero1 > numero2 and numero2 < numero1)); #tambien regresan una expresion booleana
+
+    #identidad: compara si una expresion y su contenido es identico, de caso contrario regresa un booleano
+    print("la variable uno y su contenido es igual a la variable 2? ")    
+    print(numero1 is numero2);
+    print("la variable uno y su contenido NO es igual a la variable 2? ")    
+    print(numero1 is not numero2);
+
+    #membresia: verifica si una expresion esta presente en alguna secuencia (una lista por ejemplo)
+    lista = ["perro", "gato"];
+    print("perro esta en la lista? ");
+    print("perro" in lista); #perro esta en la lista?
+    print("burro esta en la lista? ");
+    print("burro" not in lista); #burro no esta en la lista?
+
+
 
 #invocacion de funciones
-suma(); #mando llamar una funcion
+print("***UNA SIMPLE SUMA***");
+suma();
+print("\n***OBTENIENDO TIPO DE DATO DE UNA VARIABLE***");
 obtenerTipoDato();
+print("\n***ASIGNANDO TIPOS DE DATOS***");
 especificacionTipoDato();
+print("\n***REALIZANDO CONVERSIONES***");
 conversiones();
+print("\n***NUMERO ALEATORIO***");
 numeroRandom();
+print("\n***MANEJANDO VARIABLES GLOBALES***");
 variablesGlobales();
 print("python es: "+variableGlobal); #lo invoco aqui para que se modifique la variable con el metodo de arriba, puedes mover esta linea arriba de la funcion variablesGlobales para ver la diferencia
-caracteristicasTipoString();    
+print("\n***MANIPULACION DE CADENAS CON DISTINTOS METODOS***");
+caracteristicasTipoString();
+print("\n***EVALUANDO SENTENCIAS***");
+evaluarSentencias();
+print("\n***USO DE OPERADORES***");
+usarOperadores();    
