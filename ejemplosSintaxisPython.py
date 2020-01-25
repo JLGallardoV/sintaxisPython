@@ -176,6 +176,34 @@ def usarOperadores():
     print("burro esta en la lista? ");
     print("burro" not in lista); #burro no esta en la lista?
 
+def usarListas():
+    #son algo asi como arreglos pero nos permiten añadir diferentes tipos de datos en esta estructura 
+    lista = ["perro",2,[1,1],"vaca"];
+    print("esto es una lista" + str(lista));
+    print("accediendo a un elemento de una lista: "+str(lista[0]));
+    print("imprimiendo un determinado rango en la lista"+str(lista[0:1]));# nota: el inicio del rango se incluye pero el fin del rango no se incluye(en la extraccion)
+
+    #metodos que se pueden invocar en una lista
+    lista.append("chivo");
+    print("se agrego un chivo a la lista "+ str(lista));
+    lista.extend("hola");
+    print("se añadio un hola "+ str(lista)); #cada elemento a añadir se agrega caracter por caracter idependientemente sea una cadena
+    print("devolviendo el indice de perro en la lista: "+str(lista.index("perro")));
+    print("cuantas existe perro en la lista? "+str(lista.count("perro")));
+    lista.remove("perro");
+    print("se elimino perro :"+str(lista));
+
+
+def usarTuplas():
+    #Las tuplas son colecciones ordenadas y no pueden cambiar es decir, son estaticas y sin posibilidad de modificar sus elementos
+    tupla1 = ("perro",1,"puerco");
+    tupla2 = ("a","b","c")
+    print("esta es una tupla: "+str(tupla1));
+    print("imprimiendo un determinado rango en la tupla"+str(tupla1[0:1]));# nota: el inicio del rango se incluye pero el fin del rango no se incluye(en la extraccion)
+    tupla3 = tupla1 + tupla2;
+    print("concatenando tuplas: "+str(tupla3));  
+
+ 
 
 
 #invocacion de funciones
@@ -197,4 +225,8 @@ caracteristicasTipoString();
 print("\n***EVALUANDO SENTENCIAS***");
 evaluarSentencias();
 print("\n***USO DE OPERADORES***");
-usarOperadores();    
+usarOperadores();
+print("***USO DE LISTAS***");
+usarListas();
+print("***USO DE TUPLAS***");
+usarTuplas();
