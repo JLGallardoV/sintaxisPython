@@ -195,7 +195,7 @@ def usarListas():
 
 
 def usarTuplas():
-    #Las tuplas son colecciones ordenadas y no pueden cambiar es decir, son estaticas y sin posibilidad de modificar sus elementos
+    #Las tuplas son colecciones ordenadas y no pueden cambiar (inmutables), es decir, son estaticas y sin posibilidad de modificar sus elementos
     tupla1 = ("perro",1,"puerco");
     tupla2 = ("a","b","c")
     print("esta es una tupla: "+str(tupla1));
@@ -204,7 +204,91 @@ def usarTuplas():
     print("concatenando tuplas: "+str(tupla3));  
 
  
+def usarSets():
+    #un conjunto es una coleccion la cual no esta ordenada ni indexada por tal motivo no podemos acceder a su posicion mediante un indice como lo es en un arreglo
+    conjunto = {"perro","chivo","lagarto"};
+    conjunto1 = {1,2,"perro"};
+    
+    print("eso es un conjunto: "+str(conjunto));
+    
+    #metodos que se pueden usar en un conjunto
+    print("hay un lagarto en el conjunto: "+str("lagarto" in conjunto));
+    conjunto.add("cebra"); #no podemos modificar los elementos de un conjunto pero si podemos añadir nuevos elementos
+    print("añadimos una nuevo animal al conjunto" + str(conjunto));
+    conjunto.update(["pez","gallina","gato"]); #añadimos mas de un elemento al conjunto
+    print("añadimos mas de un animal al conjunto" + str(conjunto));
+    print("cuantos elementos hay en el conjunto: "+str(len(conjunto)));
+    conjunto.remove("chivo"); #eliminado el elemento chivo, si no existe el elemento marcará un error   
+    print("se elimino el chivo del conjunto: "+str(conjunto));
+    conjunto.discard("pez"); #eliminado el elemento chivo, si no existe el elemento NO marcará error   
+    print("se elimino el pez del conjunto: "+str(conjunto));
+    conjunto.pop(); #recuerda que una caracteristica de los conjuntos es que no son ordenados, por ende en esta funcion no sabras que elemento se elimino
+    print("se elimino el algun elemento del conjunto: "+str(conjunto));
+    print("eliminare todos los elementos del conjunto: "+str(conjunto.clear()));
+    conjunto = {"perro","chivo","lagarto"};
+    conjunto2 = conjunto.union(conjunto1); #haciendo una union de conjuntos, si hay un elemento que se repita en ambos conjuntos solo lo pone una vez
+    print("este es el conjunto 2, resultado de una union: "+str(conjunto2));
+    conjunto2 = conjunto.intersection(conjunto1); #haciendo una interseccion de conjuntos, si hay un elemento que se repita en ambos conjuntos es el que muestra
+    print("este es el conjunto 2, resultado de una interseccion: "+str(conjunto2));
 
+
+def usarDiccionarios():
+    #los diccionarios son algo asi como objetos, donde contienen sus propiedad (key en python) y valor (value), son desordenados pero indexados y editables
+    diccionario = {
+        "nombre": "jose",
+        "apellidoP": "gallardo",
+        "edad": 22
+    }
+
+    print("este es un diccionario: "+ str(diccionario))
+    #manipulacion de diccionarios
+    print("extrayendo el valor del key nombre del diccionario :"+diccionario["nombre"]); #usando el metodo get("nombre") tenemos el mismo resultado
+    diccionario["nombre"] = "luis";
+    print("cambiando el valor del key nombre del diccionario :"+diccionario.get("nombre"));
+    for i in diccionario:
+        print("recorriendo con un for un diccionario: "+str(i)); #aqui solo devolvemos las keys del diccionario
+        print("valores del diccionario recorridos mediante un for: "+str(diccionario[i])); #aqui si devuelven sus valores
+     
+    for i in diccionario.values():
+        print("asi tambien puedo obtener los valores del diccionario: "+str(i));
+
+    for i,j in diccionario.items():
+        print("asi imprimo practicamente el key con su respuectivo valor: "+str(i) +" "+str(j)); # si solo uso la variable i, la impresion esta entre parantesis (key:value)
+
+    if "nombre" in diccionario:
+        print("la key nombre se encuentra en el diccionario");
+    
+    print("imprimimos la longitud (numero de keys) del diccionario: "+str(len(diccionario)));
+
+    diccionario["origen"] = "abasolo";# de esta manera se añade una nueva key con su respectivo valor
+    print("aqui se agrego una nueva key con un valor al diccionario: "+str(diccionario));
+
+    diccionario.pop("apellidoP"); #asi eliminamos una key y su valor de un diccionario
+    print("eliminamos la key y su valor de apellidoP: "+str(diccionario));
+    diccionario.popitem(); #remueve el ultimo elemento del diccionario
+    print("removimos el ultimo elemento del diccionario: "+str(diccionario));
+    diccionarioCopia = diccionario.copy();
+    print("este es un diccionario copiado "+str(diccionarioCopia));
+    print("vaciamos por completo el diccionario: "+ str(diccionario.clear())); # podemos usar del diccionario, pero esta palabra reservada elimina por completo el diccionario marcando un error por indefinida  
+
+    #diccionarios anidados (practicamente son objetos pero se acceden de manera diferente, esto es obvio, pues es otro lenguaje):
+    miFamilia = {
+        "papa":{
+            "nombre":"juan",
+            "edad":36
+        },
+        "mama":{
+            "nombre":"maria",
+            "edad":32
+        },
+        "hermano":{
+            "nombre":"juan jr",
+            "edad":27
+        }
+    }
+    print("este es un diccionario anidado: "+str(miFamilia));
+    nuevoDiccionario = dict(raza = "doberman",edad = 23); #podemos usar el constructor para crear un nuevo diccionario
+    print("de esta manera tambien puedo crear un diccionario: "+str(nuevoDiccionario));
 
 #invocacion de funciones
 print("***UNA SIMPLE SUMA***");
@@ -230,3 +314,7 @@ print("***USO DE LISTAS***");
 usarListas();
 print("***USO DE TUPLAS***");
 usarTuplas();
+print("***USO DE CONJUNTOS***");
+usarSets();
+print("***USO DE DICCIONARIOS***");
+usarDiccionarios();
