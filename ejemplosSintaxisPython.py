@@ -290,6 +290,72 @@ def usarDiccionarios():
     nuevoDiccionario = dict(raza = "doberman",edad = 23); #podemos usar el constructor para crear un nuevo diccionario
     print("de esta manera tambien puedo crear un diccionario: "+str(nuevoDiccionario));
 
+
+def condicionalIf():
+    #los if se manejan como en cualquier otro lenguaje a diferencia que aqui no se usan las llaves debido a que python trabaja con identacion y no con llaves
+    variable1 = 200;
+    variable2 = 100;
+    
+    if variable1 > variable2:
+        print("entro en el IF del primer condicional");
+    
+    if variable2 > variable1:
+        print("que raro") 
+    else:
+        print("entro en el ELSE del segundo condicional");
+
+    if variable2 > variable1:
+        print("que raro")
+    elif variable1 > variable2:
+        print("entro en un ELIF del tercer condicional");
+    
+    #print en una linea, el primer print es como si se ejecutara si el if se cumple, el segundo es como si el else se cumpliera
+    print("if de una linea variable 1 fue mayor") if variable1 > variable2 else print("if de una linea variable 2 fue mayor");
+    
+
+def ciclosForWhile():
+    #ciclo while; se detiene el ciclo hasta que la condicion resulte false
+    i = 0
+    animales = ["perro","chivo","caballo","puerco","tejon"];#lista a iterar
+    descripciones = ["pequeño","barbon","veloz","gordo","agresivo"];#lista a iterar
+    while i < 10:
+        i += 1; #como ya se comento esto es igual a usar i++ en otros lenguajes
+        if i ==4:
+            continue #simplemente se salta esa iteracion, si te fijas en los print no pinta el 4
+        if i == 7:
+            break; #rompe completamente el ciclo sin importar si la condicion del while no ha sido aun false
+        print("while ejecutandose"+str(i)+" vez(ces)");
+
+    
+    #ciclo for; no se parece tanto al de otros lenguajes, ya que este no contiene una condicional relacional, simplemente recorre una
+    # estructura de datos (itera cada uno de sus elementos hastas que pasa por cada uno de ellos)
+    for animal in animales:
+        if animal == "perro":
+            continue #al igual que en un ciclo while, aqui tambien se puede usar un continue para saltar la actual iteracion 
+        if animal == "puerco":
+            break #al igual que en un ciclo while, aqui tambien se puede usar un breack para rompler el ciclo 
+        print("ciclo for, elemento: "+animal);
+
+    #el metodo range nos ayuda a llevar acabo un ciclo pero con un numero de iteraciones limite (el que defines en el parametro), 
+    #esto hace un for mas parecido a los que conocemos en otros lenguajes
+    #nota, podemos hacer rangos(2,4) de 2 a 4(no incluido) otra manera es range(2,20,2) indica del 2 al 20 (no incluido) pero de 2 en 2
+    for animal in range(4): 
+        print("ciclo for con rango: "+animales[animal]);
+
+    #for anidado
+    for animal in animales:
+        for descripcion in descripciones:
+            print("este es un for anidado: "+str(animal),str(descripcion));
+    
+    #la palabra reservada pass nos ahorra un error en consola en caso de que por alguna extraña razon no se pueda iterar un ciclo
+    for animal in animales:
+        pass;
+
+        
+        
+    
+
+
 #invocacion de funciones
 print("***UNA SIMPLE SUMA***");
 suma();
@@ -318,3 +384,7 @@ print("***USO DE CONJUNTOS***");
 usarSets();
 print("***USO DE DICCIONARIOS***");
 usarDiccionarios();
+print("***USO DE CONDICIONAL IF***");
+condicionalIf();
+print("***USO DE CICLOS***");
+ciclosForWhile();
