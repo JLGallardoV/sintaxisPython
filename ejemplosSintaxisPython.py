@@ -350,6 +350,34 @@ def ciclosForWhile():
     #la palabra reservada pass nos ahorra un error en consola en caso de que por alguna extraña razon no se pueda iterar un ciclo
     for animal in animales:
         pass;
+    
+
+def funcionesConParametros(nombre):
+    #recibiendo parametros en una funcion, al momento de su invocacion se debe hacer uso del numero de parametros establecidos
+    print("hola: ",str(nombre));
+
+
+def funcionesConParametrosDesconocidos(*personas):
+    #cuando no se sabe el numero de parametros se antepone el caracter "*" para permitir un numero desconocido de parametros 
+    print("estas son las personas presentes: ",personas);
+
+
+def funcionesConKeyboard(parametro1,parametro2):
+    #para establecer desde el paso de parametros que parametro pertenece a quien, se usan los keyboards (ver invocacion de la funcion)
+    print("mira el orden de los parametros: ",parametro1," - ",parametro2); 
+
+
+def funcionesConKeyboardDesconocido(**personas):
+    # si se tienen varios parametros desconocidos y se quiere añadir un orden de toma de valores se usa **
+    print("mira que parametro estoy tomando: ",personas["segundo"])
+
+
+def funcionConValorPorDefecto(parametro = "buenos dias"):
+    #establecemos un parametro por defecto, en caso de no pasarle el parametro en su invocacion, entonces toma el "buenos dias"
+    print("parametro por defecto: ",parametro);
+
+
+
 
         
         
@@ -388,3 +416,10 @@ print("***USO DE CONDICIONAL IF***");
 condicionalIf();
 print("***USO DE CICLOS***");
 ciclosForWhile();
+print("***FUNCIONES CON PARAMETROS***");
+funcionesConParametros("juanito");
+funcionesConParametrosDesconocidos(" pedro"," juan"," pablo"," lupe");
+funcionesConKeyboard(parametro1="hello",parametro2="hola");
+funcionesConKeyboardDesconocido(primero="juan",segundo="rosa");
+funcionConValorPorDefecto();
+funcionConValorPorDefecto("hola");
