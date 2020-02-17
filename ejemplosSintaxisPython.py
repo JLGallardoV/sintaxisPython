@@ -377,6 +377,16 @@ def funcionConValorPorDefecto(parametro = "buenos dias"):
     print("parametro por defecto: ",parametro);
 
 
+def funcionRecibiendoLista(lista):
+    for x in lista:
+        print("contenido lista: ",str(x));
+
+
+def funcionRetornarValor(numero):
+    resultado = 5 + numero;
+    return resultado;
+
+
 
 
         
@@ -423,3 +433,6 @@ funcionesConKeyboard(parametro1="hello",parametro2="hola");
 funcionesConKeyboardDesconocido(primero="juan",segundo="rosa");
 funcionConValorPorDefecto();
 funcionConValorPorDefecto("hola");
+milista = ["perro","gato","chivo"]
+funcionRecibiendoLista(milista);
+print(funcionRetornarValor(3));
