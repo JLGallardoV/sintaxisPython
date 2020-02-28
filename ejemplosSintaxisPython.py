@@ -387,7 +387,13 @@ def funcionRetornarValor(numero):
     return resultado;
 
 
+def funcionLambda(parametro):
+    # es una funcion anonima, por ello la meto en una funcion definida (para poder invocarla), generlmente se usan para ejecutar instrucciones simples
+    # el cuerpo de la funcion es ejecutado y retornado, sintaxis... lambda <argumentos>: <cuerpo>
+    funcion = lambda argumento: argumento * parametro;
 
+    #se invoca de la siguiente manera, invocando el nombre de la funcion lamba y pasando el respectivo argumento
+    print(funcion(2));
 
         
         
@@ -436,3 +442,5 @@ funcionConValorPorDefecto("hola");
 milista = ["perro","gato","chivo"]
 funcionRecibiendoLista(milista);
 print(funcionRetornarValor(3));
+print("***FUNCTION LAMBDA***");
+funcionLambda(5);
