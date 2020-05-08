@@ -177,7 +177,8 @@ def usarOperadores():
     print("burro" not in lista); #burro no esta en la lista?
 
 def usarListas():
-    #son algo asi como arreglos pero nos permiten añadir diferentes tipos de datos en esta estructura 
+    #son algo asi como arreglos pero nos permiten añadir diferentes tipos de datos en esta estructura
+    #Generalmente tienen la funcion de ARREGLOS ya que en python no existen como tal. 
     lista = ["perro",2,[1,1],"vaca"];
     print("esto es una lista" + str(lista));
     print("accediendo a un elemento de una lista: "+str(lista[0]));
@@ -420,7 +421,7 @@ print("\n***EVALUANDO SENTENCIAS***");
 evaluarSentencias();
 print("\n***USO DE OPERADORES***");
 usarOperadores();
-print("***USO DE LISTAS***");
+print("***USO DE LISTAS / ARREGLOS***");
 usarListas();
 print("***USO DE TUPLAS***");
 usarTuplas();
